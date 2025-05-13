@@ -1,0 +1,176 @@
+:root {
+    --color-1: #223d58;
+    --color-2: #3e6389;
+    --color-3: #6e94b9;
+    --color-4: #b1d1f1;
+    --color-5: #1c7373;
+    --color-6: #005757;
+    --color-7: #b45908;
+    --color-8: #ab5408;
+    --color-fondo: #eaeef4;
+    --color-complementario-I : #ce1d49;
+    --color-complementario-II : #b81941;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.tips{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.tips h2{
+    text-transform: uppercase;
+}
+
+.tips .card-tips{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-tips .tip-d{
+    width: 700px;
+    height: 300px;
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: var(--color-blanco);
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+}
+
+.tip-d .image-mascota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tip-d .image-mascota img{
+    width: 250px;
+    height: auto;
+    margin: 0px 20px 0px 0px;
+}
+
+.tip-d .descripcion-d{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tip-d .descripcion-d h3{
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.tip-d .descripcion-d p{
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.card-tips .tip-i{
+    width: 700px;
+    height: 300px;
+    margin: 20px 10px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: row-reverse;
+    background-color: var(--color-blanco);
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+}
+
+.tip-i .image-mascota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tip-i .image-mascota img{
+    width: 200px;
+    height: auto;
+    margin: 0px 0px 0px 20px;
+}
+
+.tip-i .descripcion-i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tip-i .descripcion-i h3{
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.tip-i .descripcion-i p{
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+@media (max-width:700px) {
+    .card-tips .tip-d{
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .tip-d .image-mascota{
+        width: 100%;
+    }
+
+    .tip-d .image-mascota img{
+        width: 150px;
+        margin: 0;
+    }
+
+    .tip-d .descripcion-d h3{
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .tip-d .descripcion-d p{
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+    .card-tips .tip-i{
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .tip-i .image-mascota{
+        width: 100%;
+    }
+
+    .tip-i .image-mascota img{
+        width: 100px;
+        margin: 0;
+    }
+
+    .tip-i .descripcion-i h3{
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .tip-i .descripcion-i p{
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}

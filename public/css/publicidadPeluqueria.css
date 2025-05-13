@@ -1,0 +1,69 @@
+.peluqueria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.peluqueria .link-peluqueria{
+    width: 950px;
+}
+
+.img-peluqueria-1{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.img-peluqueria-2{
+    display: none;
+}
+
+@media (max-width:960px) {
+    .peluqueria .link-peluqueria{
+        width: 600px;
+    }
+
+    .img-peluqueria-1{
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (max-width:610px) {
+    .peluqueria .link-peluqueria{
+        width: 400px;
+    }
+
+    .img-peluqueria-1{
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+}
+
+@media (max-width:410px) {
+    .peluqueria .link-peluqueria{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .img-peluqueria-1{
+        display: none;
+    }
+
+    .img-peluqueria-2{
+        display: block;
+        padding: 10px;
+        width: 250px;
+        height: 120px;
+        aspect-ratio: 16/9;
+    }
+}

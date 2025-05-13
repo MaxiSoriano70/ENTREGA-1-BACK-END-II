@@ -1,0 +1,148 @@
+.nuestras-marcas{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nuestras-marcas .marca-titulo{
+    margin-bottom: 10px;
+}
+
+.nuestras-marcas .marca-titulo h3{
+    text-transform: uppercase;
+}
+
+.nuestras-marcas .marcas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nuestras-marcas .marcas .contenedor-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 175px;
+    height: 100px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 10px 10px;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+}
+
+.nuestras-marcas .marcas .contenedor-logo .logo-royal-canin{
+    width: 175px;
+    height: 100px;
+    aspect-ratio: 1.75;
+}
+
+.nuestras-marcas .marcas .contenedor-logo .logo-purina{
+    width: 175px;
+    height: 100px;
+    aspect-ratio: 1.75;
+}
+
+.nuestras-marcas .marcas .contenedor-logo .logo-nexgard{
+    width: 175px;
+    height: 100px;
+    aspect-ratio: 1.75;
+}
+
+.nuestras-marcas .marcas .contenedor-logo .logo-bravexto{
+    width: 175px;
+    height: 100px;
+    aspect-ratio: 1.75;
+}
+
+.nuestras-marcas .marcas .contenedor-logo .logo-purina-pro-plan{
+    width: 130px;
+    height: 55px;
+    aspect-ratio: 2.3636;
+}
+
+.nuestras-marcas .marcas .contenedor-logo .logo-whiskas{
+    width: 120px;
+    height: 100px;
+    aspect-ratio: 1.2;
+}
+
+@media (max-width:630px) {
+    .nuestras-marcas .marcas .contenedor-logo{
+        width: 150px;
+        height: 75px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-royal-canin{
+        width: 150px;
+        height: 75px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-purina{
+        width: 150px;
+        height: 75px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-nexgard{
+        width: 150px;
+        height: 75px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-bravexto{
+        width: 150px;
+        height: 75px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-purina-pro-plan{
+        width: 105px;
+        height: 30px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-whiskas{
+        width: 95px;
+        height: 80px;
+    }
+}
+
+@media (max-width:380px) {
+    .nuestras-marcas .marcas .contenedor-logo{
+        width: 90px;
+        height: 55px;
+        border-radius: 15px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-royal-canin{
+        width: 90px;
+        height: 55px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-purina{
+        width: 90px;
+        height: 55px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-nexgard{
+        width: 90px;
+        height: 55px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-bravexto{
+        width: 90px;
+        height: 55px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-purina-pro-plan{
+        width: 70px;
+        height: 30px;
+    }
+
+    .nuestras-marcas .marcas .contenedor-logo .logo-whiskas{
+        width: 65px;
+        height: 55px;
+    }
+}
