@@ -1,0 +1,226 @@
+<!-- Header -->
+<header>
+    <section class="contenedor">
+        <article class="logo">
+            <a href="index.html" aria-label="Logo y nombre">
+                <img src="./assets/img/Logo.png" alt="Logo PetShop">
+                <p>CarnetVet</p>
+            </a>
+        </article>
+        <nav class="menu">
+            <article class="head">
+                <div class="logo">
+                    <a href="index.html" aria-label="Logo y nombre">
+                        <img src="./assets/img/Logo.png" alt="Logo PetShop">
+                        <p>Veterinaria</p>
+                    </a>
+                </div>
+                <button type="button" class="close-menu-btn" aria-label="Cerrar menu"><i class="fa-regular fa-circle-xmark"></i></button>
+            </article>
+            <ul>
+                <li>
+                    <a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" aria-label="Vacunas" onclick="event.preventDefault()"><i class="fa-solid fa-syringe"></i> Vacunas</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#" aria-label="Caninos"><span><i class="fa-solid fa-dog"></i> Caninos</span></a></li>
+                        <li><a href="#" aria-label="Felinos"><span><i class="fa-solid fa-cat"></i> Felinos</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" aria-label="Contacto" onclick="event.preventDefault()"><i class="fa-solid fa-envelope"></i> Contacto</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#" aria-label="Whatsapp"><span><i class="fa-brands fa-whatsapp"></i> Whatsapp</span></a></li>
+                        <li><a href="#" aria-label="Instragram"><span><i class="fa-brands fa-instagram"></i> Instragram</span></a></li>
+                        <li><a href="#" aria-label="Facebook"><span><i class="fa-brands fa-facebook"></i> Facebook</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" aria-label="A cerca de nosotros"><i class="fa-solid fa-circle-info"></i> A cerca de nosotros</a>
+                </li>
+                <li class="dropdown" id="opciones-usuario">
+                    <a href="#" aria-label="Nombre usuario" onclick="event.preventDefault()"><i class="fa-solid fa-user"></i> <span id="nombre-usuario"></span></a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul class="submenu">
+                        <!-- Button modal Editar Perfil-->
+                        <li><a href="#" aria-label="Datos Personales" data-bs-toggle="modal" data-bs-target="#editarPerfilModal"><span><i class="fa-solid fa-user-pen"></i> Datos Personales</span></a></li>
+                        <li><a href="pages/misMascotas.html" aria-label="Mis mascotas"><span><i class="fa-solid fa-paw"></i> Mis mascotas</span></a></li>
+                        <li><a href="#" aria-label="Cerrar Sesión" onclick="cerrarSesion()"><span><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <article class="header-rigth">
+            <!-- Button modal Iniciar Sesión-->
+            <button type="button" id="boton-iniciar-sesion" class="login-btn" aria-label="Iniciar Sesión" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</button>
+            <button type="button" class="open-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </article>
+    </section>
+</header>
+
+<!-- Main -->
+<main>
+    <!-- Carousel Mascotas -->
+    <section id="carouselPet" class="carousel slide carousel-fade">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselPet" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselPet" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselPet" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active container-img">
+                <img src="./assets/img/dog-and-cat-1.jpeg" class="d-block w-100 petCarousel"
+                    alt="filamento ecofilas">
+                <div class="d-flex align-items-center justify-content-center flex-column text-carrusel">
+                    <h2 class="titulo-carrusel">Bienvenido a PetShop te ayudaremos a llevar el resgistro de vacunas de tus mascotas</h2>
+                    <button id="boton-registrarse" class="btn btn-p-slider-1" aria-label="Registarse" data-bs-toggle="modal" data-bs-target="#registrarseModal">Registrate</button>
+                    <a id="boton-mis-mascotas" href="./pages/misMascotas.html" class="btn btn-p-slider-1">Mis mascotas</a>
+                </div>
+            </div>
+            <div class="carousel-item container-img">
+                <img src="./assets/img/dog-1.jpeg" class="d-block w-100 petCarousel"
+                    alt="colores de filamentos">
+                <div class="d-flex align-items-center justify-content-center flex-column text-carrusel">
+                    <h2 class="titulo-carrusel">Conoce el calendario de vacunas de un canino</h2>
+                    <a href="#" class="btn btn-p-slider-2" aria-label="Calendario Canino">Calendario</a>
+                </div>
+            </div>
+            <div class="carousel-item container-img">
+                <img src="./assets/img/cat-3.jpeg" class="d-block w-100 petCarousel"
+                    alt="filamentos softcolors">
+                <div class="d-flex align-items-center justify-content-center flex-column text-carrusel">
+                    <h2 class="titulo-carrusel">Conoce el calendario de vacunas de un felino</h2>
+                    <a href="#" class="btn btn-p-slider-3" aria-label="Calendario Felino">Calendario</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPet" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPet" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
+
+    <!-- Nuestras marcas-->
+    <section class="nuestras-marcas">
+        <article class="marca-titulo">
+            <h3>Nuestras sponsors</h3>
+        </article>
+        <article class="marcas">
+            <div class="contenedor-logo">
+                <img class="logo-royal-canin" src="./assets/img/marca-1.png" alt="royal-canin">
+            </div>
+            <div class="contenedor-logo">
+                <img class="logo-purina" src="./assets/img/marca-2.png" alt="purina">
+            </div>
+            <div class="contenedor-logo">
+                <img class="logo-nexgard" src="./assets/img/marca-3.png" alt="nexgard">
+            </div>
+            <div class="contenedor-logo">
+                <img class="logo-bravexto" src="./assets/img/marca-4.png" alt="bravexto">
+            </div>
+            <div class="contenedor-logo">
+                <img class="logo-purina-pro-plan" src="./assets/img/marca-5.png" alt="purina-pro-plan">
+            </div>
+            <div class="contenedor-logo">
+                <img class="logo-whiskas" src="./assets/img/marca-6.png" alt="whiskas">
+            </div>
+        </article>
+    </section>
+
+    <!-- Recomendaciones-->
+    <section class="tips">
+        <h2>Cuidá a tu mascota</h2>
+        <article class="card-tips">
+            <div class="tip-d">
+                <figure class="image-mascota">
+                    <img src="./assets/img/tip-alimentacion.png" alt="img-alimentacion">
+                </figure>
+                <div class="descripcion-d">
+                    <h3>Alimentación</h3>
+                    <p>La alimentación de tus perros y gatos debe ser a base de alimentos balanceados acorde a las necesidades de los mismos ó en su defecto lo msa variada posible. (Consultá siempre a tu veterinario de confianza).</p>
+                </div>
+            </div>
+
+            <div class="tip-i">
+                <figure class="image-mascota">
+                    <img src="./assets/img/tip-higiene.jpg" alt="img-higiene">
+                </figure>
+                <div class="descripcion-i">
+                    <h3>Higiene</h3>
+                    <p>A los perros hay que bañarlos con agua y jabón máximo 1 vez cada 15 días y mínimo 1 vez al mes. los gatos se limpian solos.</p>
+                </div>
+            </div>
+
+            <div class="tip-d">
+                <figure class="image-mascota">
+                    <img src="./assets/img/tip-identificacion.jpg" alt="img-identificacion">
+                </figure>
+                <div class="descripcion-d">
+                    <h3>Identificación</h3>
+                    <p>Asegurate de que siempre lleve puesto un collar con una placa identificativa con tu número de teléfono. Está demostrado que los perros que llevan una placa en el collar con nombre y teléfono vuelven más rápido a sus hogares ya que la gente es más propensa a ayudarlos si creen que tienen dueño.</p>
+                </div>
+            </div>
+
+            <div class="tip-i">
+                <figure class="image-mascota">
+                    <img src="./assets/img/tip-atencion.jpg" alt="img-atencion">
+                </figure>
+                <div class="descripcion-i">
+                    <h3>Atención Veterinaria</h3>
+                    <p>Desparasitá a tu mascota cada 6 meses, recordá que algunos parásitos pueden transmitirse al hombre. Si están molestos, si se la pasan durmiendo o no quieren comer llevalos a un veterinario. No hay que darles remedios sin ver a un doctor.</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Publicidad clinica-->
+    <section class="clinica">
+        <a class="link-clinica" href="#" target="_blank" aria-label="Clinica Veterinaria">
+            <img class="img-clinica-1" src="./assets/img/clinica-1.jpg" alt="clinica-veterinaria-1">
+            <img class="img-clinica-2" src="./assets/img/clinica-2.jpg" alt="clinica-veterinaria-2">
+        </a>
+    </section>
+
+    <!-- Publicidad peluqueria-->
+    <section class="peluqueria">
+        <a class="link-peluqueria" href="#" target="_blank" data-aos="flip-up" aria-label="Peluqueria de mascotas">
+            <img class="img-peluqueria-1" src="./assets/img/peluqueria-1.jpg" alt="peluqueria-1">
+            <img class="img-peluqueria-2" src="./assets/img/peluqueria-2.jpg" alt="peluqueria-2">
+        </a>
+    </section>
+</main>
+<!-- Footer -->
+<footer>
+    <section class="section-1">
+        <article class="box-logo">
+            <a href="index.html" aria-label="Logo y nombre">
+                <div>
+                    <img src="./assets/img/Logo.png" alt="Logo-pie-de-pagina">
+                </div>
+                <p>Veterinaria</p>
+            </a>
+        </article>
+        <article class="box-nosotros">
+            <h3>Sobre nosotros</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, impedit, et corrupti dolore, voluptate labore illo quaerat voluptatum obcaecati ipsum cum quasi eveniet. Accusantium est quo pariatur optio dolor minus.</p>
+        </article>
+        <article class="box-redes">
+            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" aria-label="Instragram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </article>
+    </section>
+    <section class="section-2">
+        <small>
+            &copy; 2025 <b>Maximiliano Soriano</b> - Todos los derechos reservados.
+        </small>
+    </section>
+</footer>
