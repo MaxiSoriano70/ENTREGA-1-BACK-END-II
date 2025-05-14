@@ -2,15 +2,15 @@
 <header>
     <section class="contenedor">
         <article class="logo">
-            <a href="index.html" aria-label="Logo y nombre">
+            <a href="/" aria-label="Logo y nombre">
                 <img src="./assets/img/Logo.png" alt="Logo PetShop">
-                <p>CarnetVet</p>
+                <p>Veterinaria</p>
             </a>
         </article>
         <nav class="menu">
             <article class="head">
                 <div class="logo">
-                    <a href="index.html" aria-label="Logo y nombre">
+                    <a href="/" aria-label="Logo y nombre">
                         <img src="./assets/img/Logo.png" alt="Logo PetShop">
                         <p>Veterinaria</p>
                     </a>
@@ -19,7 +19,7 @@
             </article>
             <ul>
                 <li>
-                    <a href="index.html" aria-label="Home"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="/" aria-label="Home"><i class="fa-solid fa-house"></i> Home</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" aria-label="Vacunas" onclick="event.preventDefault()"><i class="fa-solid fa-syringe"></i> Vacunas</a>
@@ -55,7 +55,7 @@
         </nav>
         <article class="header-rigth">
             <!-- Button modal Iniciar Sesión-->
-            <button type="button" id="boton-iniciar-sesion" class="login-btn" aria-label="Iniciar Sesión" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</button>
+            <a href="/login" type="button" id="boton-iniciar-sesion" class="login-btn"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
             <button type="button" class="open-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
         </article>
     </section>
@@ -75,8 +75,8 @@
                 <img src="./assets/img/dog-and-cat-1.jpeg" class="d-block w-100 petCarousel"
                     alt="filamento ecofilas">
                 <div class="d-flex align-items-center justify-content-center flex-column text-carrusel">
-                    <h2 class="titulo-carrusel">Bienvenido a PetShop te ayudaremos a llevar el resgistro de vacunas de tus mascotas</h2>
-                    <button id="boton-registrarse" class="btn btn-p-slider-1" aria-label="Registarse" data-bs-toggle="modal" data-bs-target="#registrarseModal">Registrate</button>
+                    <h2 class="titulo-carrusel">Bienvenido a Veterinaria te ayudaremos a cuidar de tus mascotas</h2>
+                    <a href="/register" id="boton-registrarse" class="btn btn-p-slider-1">Registrate</a>
                     <a id="boton-mis-mascotas" href="./pages/misMascotas.html" class="btn btn-p-slider-1">Mis mascotas</a>
                 </div>
             </div>

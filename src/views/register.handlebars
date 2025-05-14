@@ -7,22 +7,27 @@
                 <form class="formRegister">
                     <div class="cInputRegister fondoWhite">
                         <input class="inputRegisterWhite borderWhite" type="text" name="nombre" id="nombre">
-                        <label class="labelRegister fondoWhite lblRWhite" for="nombre">Nombre</label>
+                        <label class="labelRegister fondoWhite lblRWhite" for="nombre">Nombre y apellido*</label>
                     </div>
                     <div class="cInputRegister fondoWhite">
-                        <input class="inputRegisterWhite borderWhite inputDateDark" type="date" name="fechaDeNacimiento" id="fechaDeNacimiento">
-                        <label class="labelRegister fondoWhite lblRWhite" for="fechaDeNacimiento">Fecha de Nacimiento</label>
+                        <input class="inputRegisterWhite borderWhite" type="text" name="avatar" id="avatar">
+                        <label class="labelRegister fondoWhite lblRWhite" for="avatar">Avatar</label>
                     </div>
                     <div class="cInputRegister fondoWhite">
                         <input class="inputRegisterWhite borderWhite" type="email" name="email" id="email">
-                        <label class="labelRegister fondoWhite lblRWhite" for="email">Email</label>
+                        <label class="labelRegister fondoWhite lblRWhite" for="email">Email*</label>
                     </div>
                     <div class="cInputRegister fondoWhite">
                         <input class="inputRegisterWhite borderWhite" type="password" name="contraseña" id="contraseña">
-                        <label class="labelRegister fondoWhite lblRWhite" for="contraseña">Contraseña</label>
-                        <button class="btnContra lblRWhite"><i class="fa-solid fa-eye"></i></button>
+                        <label class="labelRegister fondoWhite lblRWhite" for="contraseña">Contraseña*</label>
+                        <button type="button" class="btnContra lblRWhite"><i class="fa-solid fa-eye"></i></button>
                     </div>
-                    <button class="btnRegistrarse" type="submit">Registrarse</button>
+                    <div class="cInputRegister fondoWhite">
+                        <input class="inputRegisterWhite borderWhite" type="password" name="repetirContraseña" id="repetirContraseña">
+                        <label class="labelRegister fondoWhite lblRWhite" for="repetirContraseña">Repetir Contraseña*</label>
+                        <button type="button" class="btnContra lblRWhite"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <button id="btnRegistrarse" class="btnRegistrarse">Registrarse</button>
                     <div class="cOr">
                         <div class="lineaOr lineaWhite"></div>
                         <span class="or lblRWhite">O</span>
@@ -31,7 +36,8 @@
                     <div class="cBtnGoogle">
                         <button class="btnGoogle modoWhite shadowColorWhite"><span class="txtGmail">Continuar con Google</span> <img class="imgGmail" src="/assets/img/gmail.png" alt="gmail"></button>
                     </div>
-                    <p class="txtIniciarSesion lblRWhite">¿Ya tiene una cuenta? <a class="lIniciarSesionDark" href="#">Iniciar sesión</a></p>
+                    <span class="txtIniciarSesion lblRWhite">¿Ya tiene una cuenta? <a class="lIniciarSesionWhite" href="/login">Iniciar sesión</a></span>
+                    <span class="txtIniciarSesion lblRWhite">Volver a <a class="lIniciarSesionWhite" href="/">Home</a></span>
                 </form>
             </div>
         </article>
@@ -39,3 +45,4 @@
         </article>
     </section>
 </main>
+<script src="/scripts/register.js"></script>

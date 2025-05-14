@@ -46,45 +46,45 @@
 }
 
 .btn-p-slider-1 {
-    background-color: var(--color-complementario-I);
-    color: var(--color-blanco);
-    padding: 10px;
-    margin-top: 10px;
-    font-weight: bolder;
-    font-size: 1rem;
+    background-color: var(--color-complementario-I) !important;
+    color: var(--color-blanco) !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    font-weight: bolder !important;
+    font-size: 1rem !important;
 }
 
 .btn-p-slider-1:hover {
-    background-color: var(--color-complementario-II);
-    color: var(--color-blanco);
+    background-color: var(--color-complementario-II) !important;
+    color: var(--color-blanco) !important;
 }
 
 .btn-p-slider-2 {
-    background-color: var(--color-7);
-    color: var(--color-blanco);
-    padding: 10px;
-    margin-top: 10px;
-    font-weight: bolder;
-    font-size: 1rem;
+    background-color: var(--color-7) !important;
+    color: var(--color-blanco) !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    font-weight: bolder !important;
+    font-size: 1rem !important;
 }
 
 .btn-p-slider-2:hover {
-    background-color: var(--color-8);
-    color: var(--color-blanco);
+    background-color: var(--color-8) !important;
+    color: var(--color-blanco) !important;
 }
 
 .btn-p-slider-3 {
-    background-color: var(--color-5);
-    color: var(--color-blanco);
-    padding: 10px;
-    margin-top: 10px;
-    font-weight: bolder;
-    font-size: 1rem;
+    background-color: var(--color-5) !important;
+    color: var(--color-blanco) !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    font-weight: bolder !important;
+    font-size: 1rem !important;
 }
 
 .btn-p-slider-3:hover {
-    background-color: var(--color-6);
-    color: var(--color-blanco);
+    background-color: var(--color-6) !important;
+    color: var(--color-blanco) !important;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
@@ -103,15 +103,15 @@
     }
 
     .btn-p-slider-1 {
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 
     .btn-p-slider-2 {
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 
     .btn-p-slider-3 {
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 }
 
@@ -131,14 +131,14 @@
     }
 
     .btn-p-slider-1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 
     .btn-p-slider-2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 
     .btn-p-slider-3 {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 }
