@@ -24,7 +24,9 @@
                 <div class="cInputLogin">
                     <input class="inputLoginWhite borderInput" type="password" name="contraseña" id="contraseña">
                     <label class="labelLogin modoWhite lblRWhite" for="contraseña">Contraseña</label>
-                    <button class="btnContra lblRWhite"><i class="fa-solid fa-eye"></i></button>
+                    <button type="button" class="btnContra lblRWhite" id="togglePassword">
+                    <i class="fa-solid fa-eye" id="iconPassword"></i>
+                    </button>
                 </div>
                 <div class="cRecordar">
                     <span class="cInputCheck">
@@ -33,10 +35,11 @@
                     </span>
                     <a class="linkOlvWhite textColorWhite" href="#">¿Olvidaste tu contraseña?</a>
                 </div>
-                <button class="btnLogin">Login</button>
+                <button id="login" class="btnLogin">Login</button>
                 <span class="cRegistrarse">¿No tienes cuenta? <a class="linkRegistrarseWhite textColorWhite" href="/register">Registrate</a></span>
                 <span class="cRegistrarse">Volver a <a class="linkRegistrarseWhite textColorWhite" href="/">Home</a></span>
             </form>
         </article>
     </section>
 </main>
+<script src="/scripts/login.js"></script>

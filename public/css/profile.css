@@ -1,0 +1,204 @@
+:root {
+    --color-1: #223d58;
+    --color-2: #3e6389;
+    --color-3: #6e94b9;
+    --color-4: #b1d1f1;
+    --color-5: #1c7373;
+    --color-6: #005757;
+    --color-7: #b45908;
+    --color-8: #ab5408;
+    --color-fondo: #eaeef4;
+    --color-complementario-I : #ce1d49;
+    --color-complementario-II : #b81941;
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.cDatosPersonales{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cDatosPersonales .datosPersonalesTitulo{
+    margin-bottom: 10px;
+}
+
+.cDatosPersonales .datosPersonalesTitulo h3{
+    text-transform: uppercase;
+}
+
+.cDatosPersonales .datosPersonales{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.datosPersonales .card{
+    position: relative;
+    width: 320px;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    margin: 10px 30px;
+}
+
+.datosPersonales .card .contenido{
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-blanco);
+}
+
+.datosPersonales .card .contenido .img-desarrollador{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.datosPersonales .card .contenido .img-desarrollador img{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    aspect-ratio: 16/9;
+}
+
+.datosPersonales .card .contenido span{
+    position: absolute;
+    width: 320px;
+    height: 350px;
+    background: linear-gradient(to right, var(--color-5), var(--color-6));
+    border-radius: 50%;
+    top: -175px;
+    left: 0px;
+}
+
+.datosPersonales .card .contenido h4{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.datosPersonales .card .contenido h5{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-9);
+}
+
+.datosPersonales .card .contenido p{
+    font-size: 16px;
+}
+
+
+@media (max-width:800px){
+    .datosPersonales .card{
+        width: 250px;
+        height: 400px;
+        margin: 10px 20px;
+    }
+
+    .datosPersonales .card .contenido .img-desarrollador img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .datosPersonales .card .contenido span{
+        width: 250px;
+        height: 280px;
+        top: -150px;
+    }
+
+    .datosPersonales .card .contenido h4{
+        font-size: 16px;
+    }
+
+    .datosPersonales .card .contenido h5{
+        font-size: 14px;
+    }
+
+    .datosPersonales .card .contenido p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:650px){
+    .cDatosPersonales{
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    .datosPersonales .card{
+        width: 200px;
+        height: 400px;
+    }
+
+    .datosPersonales .card .contenido .img-desarrollador img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .datosPersonales .card .contenido span{
+        width: 200px;
+        height: 210px;
+        top: -100px;
+    }
+
+    .datosPersonales .card .contenido h4{
+        font-size: 14px;
+    }
+
+    .datosPersonales .card .contenido h5{
+        font-size: 12px;
+    }
+
+    .datosPersonales .card .contenido p{
+        font-size: 12px;
+    }
+}
+
+@media (max-width:480px){
+    .datosPersonales .card{
+        width: 80%;
+        height: 350px;
+    }
+
+    .datosPersonales .card .contenido .img-desarrollador img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .datosPersonales .card .contenido span{
+        width: 100%;
+        height: 230px;
+        top: -100px;
+    }
+
+    .datosPersonales .card .contenido h4{
+        font-size: 14px;
+    }
+
+    .datosPersonales .card .contenido h5{
+        font-size: 12px;
+    }
+
+    .datosPersonales .card .contenido p{
+        font-size: 12px;
+    }
+}

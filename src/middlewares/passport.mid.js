@@ -9,36 +9,32 @@ const clientSecret = process.env.GOOGLE_SECRET;
 const callbackURL = "http://localhost:8080/api/auth/google/callback";
 
 passport.use("register", new LocalStrategy(
-    /* OBJETO DE LA CONFIGURACION DE LA ESTRATEGIA */
-    { passReqToCallback: true, usernameField: "email"},
-    /* CALLBACK DE LA ESTRATEGIA LOGICA DE AUTENTICACION/AUTORIZACION */
+    { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
         try {
-            /**
-             * La logica del register esta actualmente en la ruta del register
-             * para mayor ordenamiento de la autenticacion
-             * esa logica se viene para la estrategia
-             */
             const data = req.body;
-            /** Validar el si el usuario esta registrado */
+
             const user = await userManager.readBy({ email });
-            if(user){
+            if (user) {
                 const error = new Error("Invalid credentials");
                 error.status = 401;
                 throw error;
             }
-            /* Proteger la contraseña */
+
+            if (!data.avatar || data.avatar.trim() === "") {
+                data.avatar = "https://cdn-icons-png.flaticon.com/512/18851/18851107.png";
+            }
+
             data.password = createHash(password);
+
             const response = await userManager.createOne(data);
-            /** El segundo parametro del done agrega al objeto de requerimientos
-             * una propiedad user con los datos del usuario
-             */
             done(null, response);
         } catch (error) {
             done(error);
         }
     }
 ));
+
 passport.use("login", new LocalStrategy(
     /* OBJETO DE LA CONFIGURACION DE LA ESTRATEGIA */
     { passReqToCallback: true, usernameField: "email"},

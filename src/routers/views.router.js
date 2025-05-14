@@ -1,4 +1,5 @@
 import { Router } from "express";
+import isUser from "../middlewares/isUser.mid.js";
 
 const viewsRouter = Router();
 
@@ -26,8 +27,17 @@ const loginView = ( req, res ) => {
     }
 }
 
+const meView = ( req, res ) => {
+    try {
+        res.status(200).render("profile");
+    } catch (error) {
+        res.status(500).render("error");
+    }
+}
+
 viewsRouter.get("/", indexView);
 viewsRouter.get("/register", registerView);
 viewsRouter.get("/login", loginView);
+viewsRouter.get("/me", meView)
 
 export default viewsRouter;

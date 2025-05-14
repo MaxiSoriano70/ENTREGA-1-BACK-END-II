@@ -1,0 +1,110 @@
+<!-- Header -->
+<header>
+    <section class="contenedor">
+        <article class="logo">
+            <a href="/" aria-label="Logo y nombre">
+                <img src="./assets/img/Logo.png" alt="Logo PetShop">
+                <p>Veterinaria</p>
+            </a>
+        </article>
+        <nav class="menu">
+            <article class="head">
+                <div class="logo">
+                    <a href="/" aria-label="Logo y nombre">
+                        <img src="./assets/img/Logo.png" alt="Logo PetShop">
+                        <p>Veterinaria</p>
+                    </a>
+                </div>
+                <button type="button" class="close-menu-btn" aria-label="Cerrar menu"><i class="fa-regular fa-circle-xmark"></i></button>
+            </article>
+            <ul>
+                <li>
+                    <a href="/" aria-label="Home"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" aria-label="Vacunas" onclick="event.preventDefault()"><i class="fa-solid fa-syringe"></i> Vacunas</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#" aria-label="Caninos"><span><i class="fa-solid fa-dog"></i> Caninos</span></a></li>
+                        <li><a href="#" aria-label="Felinos"><span><i class="fa-solid fa-cat"></i> Felinos</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" aria-label="Contacto" onclick="event.preventDefault()"><i class="fa-solid fa-envelope"></i> Contacto</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#" aria-label="Whatsapp"><span><i class="fa-brands fa-whatsapp"></i> Whatsapp</span></a></li>
+                        <li><a href="#" aria-label="Instragram"><span><i class="fa-brands fa-instagram"></i> Instragram</span></a></li>
+                        <li><a href="#" aria-label="Facebook"><span><i class="fa-brands fa-facebook"></i> Facebook</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" aria-label="A cerca de nosotros"><i class="fa-solid fa-circle-info"></i> A cerca de nosotros</a>
+                </li>
+                <li class="dropdown" id="opciones-usuario">
+                    <a href="#" aria-label="Nombre usuario" onclick="event.preventDefault()"><i class="fa-solid fa-user"></i> <span id="nombre-usuario"></span></a>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul class="submenu">
+                        <!-- Button modal Editar Perfil-->
+                        <li><a href="#" aria-label="Datos Personales" data-bs-toggle="modal" data-bs-target="#editarPerfilModal"><span><i class="fa-solid fa-user-pen"></i> Datos Personales</span></a></li>
+                        <li><a href="pages/misMascotas.html" aria-label="Mis mascotas"><span><i class="fa-solid fa-paw"></i> Mis mascotas</span></a></li>
+                        <li><a href="#" aria-label="Cerrar Sesión" onclick="cerrarSesion()"><span><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <article class="header-rigth">
+            <!-- Button modal Iniciar Sesión-->
+            <a href="/login" type="button" id="boton-iniciar-sesion" class="login-btn"><i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión</a>
+            <button type="button" class="open-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </article>
+    </section>
+</header>
+<main>
+    <section class="cDatosPersonales">
+        <article class="desarrolladores-titulo">
+            <h3>Datos Personales</h3>
+        </article>
+        <article class="datosPersonales">
+            <div class="card">
+                <div class="contenido">
+                    <span></span>
+                    <div class="img-desarrollador">
+                        <img id="imgProfile" src="../img/Pingu.jpg" alt="desarrolador">
+                    </div>
+                    <h4 id="nicknameProfile">Maximiliano Soriano</h4>
+                    <p id="emailProfile">maxi@gmail.com</p>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+<!-- Footer -->
+<footer>
+    <section class="section-1">
+        <article class="box-logo">
+            <a href="index.html" aria-label="Logo y nombre">
+                <div>
+                    <img src="./assets/img/Logo.png" alt="Logo-pie-de-pagina">
+                </div>
+                <p>Veterinaria</p>
+            </a>
+        </article>
+        <article class="box-nosotros">
+            <h3>Sobre nosotros</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, impedit, et corrupti dolore, voluptate labore illo quaerat voluptatum obcaecati ipsum cum quasi eveniet. Accusantium est quo pariatur optio dolor minus.</p>
+        </article>
+        <article class="box-redes">
+            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" aria-label="Instragram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </article>
+    </section>
+    <section class="section-2">
+        <small>
+            &copy; 2025 <b>Maximiliano Soriano</b> - Todos los derechos reservados.
+        </small>
+    </section>
+</footer>
+<script src="/scripts/profile.js"></script>
