@@ -1,6 +1,7 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
+import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
 import { userManager } from "../data/manager.mongo.js";
 import { createHash, verifyHash } from "../helpers/hash.helpers.js";
 import { createToken } from "../helpers/token.helpers.js";
@@ -16,9 +17,10 @@ passport.use("register", new LocalStrategy(
 
             const user = await userManager.readBy({ email });
             if (user) {
-                const error = new Error("Invalid credentials");
+                /*const error = new Error("Invalid credentials");
                 error.status = 401;
-                throw error;
+                throw error;*/
+                return done(null, null, { message: "Invalid credentials", statusCode: 401});
             }
 
             if (!data.avatar || data.avatar.trim() === "") {
@@ -44,15 +46,17 @@ passport.use("login", new LocalStrategy(
             /* Validar si existe el usuario */
             const response = await userManager.readBy({ email });
             if(!response){
-                const error = new Error("Invalid credentials.");
+                /*const error = new Error("Invalid credentials.");
                 error.status = 401;
-                throw error
+                throw error;*/
+                return done(null, null, { message: "Invalid credentials.", statusCode: 401});
             }
             /* Validar contraseña */
             if(!verifyHash(password, response.password)){
-                const error = new Error("Invalid credencials");
+                /*const error = new Error("Invalid credencials");
                 error.statusCode = 401;
-                throw error;
+                throw error;*/
+                return done(null, null, { message: "Invalid credentials.", statusCode: 401});
             }
             /* Lo dejamos temporalmente porqeu despues vamos a utilizar JWT */
             /*req.session.user_id = response._id;
@@ -73,9 +77,8 @@ passport.use("login", new LocalStrategy(
         }
     }
 ));
-passport.use(
-    "google",
-    new GoogleStrategy(
+
+passport.use("google", new GoogleStrategy(
         { clientID, clientSecret, callbackURL },
         async (accessToken, resfreshToken, profile, done) => {
             try {
@@ -97,6 +100,56 @@ passport.use(
             }
         }
     )
-)
+);
+
+/* MIDDLEWARE PARA VERIFICAR QUE EL USUARIO ES PARTE DE NUESTRA APP*/
+/* NOMBRE DE LA ESTRATEGIA Y SU CONSTRUCTOR*/
+passport.use("current", new JwtStrategy(
+    /* Objeto de configuracion de la estrategia */
+    { jwtFromRequest: ExtractJwt.fromExtractors([req => req?.cookies?.token]), secretOrKey: process.env.SECRETJWT },
+    /* Callback con la logica de la estrategia */
+    async(data, done) => {
+        try {
+            const { user_id } = data;
+            const user = await userManager.readById(user_id);
+            if(!user){
+                /*const error = new Error("Bad auth");
+                error.statusCode = 401;
+                throw error;*/
+                return done(null, null, { message: "Bad auth.", statusCode: 401});
+            }
+            done(null, user);
+        } catch (error) {
+            done(error)
+        }
+    }
+));
+
+passport.use("admin", new JwtStrategy(
+    /* Objeto de configuracion de la estrategia */
+    { jwtFromRequest: ExtractJwt.fromExtractors([req => req?.cookies?.token]), secretOrKey: process.env.SECRETJWT },
+    /* Callback con la logica de la estrategia */
+    async (data, done) =>{
+        try {
+            const { user_id} = data;
+            const user = await userManager.readById(user_id);
+            if(!user){
+                /*const error = new Error("Bad auth");
+                error.statusCode = 401;
+                throw error;*/
+                return done(null, null, { message: "Bad auth.", statusCode: 401});
+            }
+            if(user.role !== "ADMIN"){
+                /*const error = new Error("Forbidden");
+                error.statusCode = 403;
+                throw error;*/
+                return done(null, null, { message: "Forbidden.", statusCode: 403});
+            }
+            done(null, user);
+        } catch (error) {
+            done(error)
+        }
+    }
+));
 
 export default passport;
