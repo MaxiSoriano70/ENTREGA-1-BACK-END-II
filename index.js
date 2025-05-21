@@ -1,4 +1,4 @@
-import "dotenv/config.js";
+import "./src/helpers/setEnv.helper.js";
 import express from "express";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
@@ -8,12 +8,14 @@ import router from "./src/routers/index.router.js";
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import dbConnect from "./src/helpers/dbConnect.helper.js";
+import setArgsHelper from "./src/helpers/setArgs.helper.js";
 
 /* SERVER SETTINGS */
 const server = express();
 const port = process.env.PORT;
 const ready = () => {
     console.log("Server: http://localhost:" + port);
+    console.log("Server ready on mode " + setArgsHelper.mode)
     dbConnect(process.env.MONGO_DB);
 };
 server.listen(port, ready);
@@ -34,3 +36,7 @@ server.use(express.static("public"));
 server.use("/", router);
 server.use(errorHandler);
 server.use(pathHandler);
+
+console.log(process.pid);
+console.log(process.platform);
+console.log(process.argv);
