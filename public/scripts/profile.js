@@ -12,6 +12,7 @@ const findProfile = async () => {
 
         const opts = {
             method: "GET",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`

@@ -1,24 +1,8 @@
-import { fork } from "child_process";
 import CustomRouter from "./custom.router.js";
 import authRouter from "./api/auth.router.js";
 import cartRouter from "./api/cart.router.js";
 import productsRouter from "./api/products.router.js";
-import sum from "../helpers/sum.helper.js";
-
-const sumCb = (req, res) => {
-    const result = sum();
-    return res.json200(result);
-};
-
-const sumProcessCb = (req, res) => {
-    /* ESTO FUNCIONA SI --WATCH */
-    /* CREA UN SUBPROCESO */
-    const childProcess = fork("./src/helpers/sumProcess.helper.js");
-    /* SE INICIA EL SUBPROCESO */
-    childProcess.send("start");
-    /* RESPONDO */
-    childProcess.on("message", result => res.json200(result));
-};
+import { sumCb, sumProcessCb } from "../controllers/api.controller.js";
 
 class ApiRouter extends CustomRouter{
     constructor(){

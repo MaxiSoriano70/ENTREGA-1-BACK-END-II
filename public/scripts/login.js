@@ -17,6 +17,7 @@ document.querySelector("#login").addEventListener("click", async (e) => {
 
         const opts = {
             method: "POST",
+            credentials: "include",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
         };

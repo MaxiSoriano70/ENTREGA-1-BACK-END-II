@@ -93,6 +93,7 @@ btnRegister.addEventListener("click", async (e) => {
 
             const response = await fetch("/api/auth/register", {
                 method: "POST",
+                credentials: "include",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });

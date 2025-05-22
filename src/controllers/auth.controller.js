@@ -1,0 +1,42 @@
+const register = (req, res) => {
+    res.json201({user : req.user._id}, "Registered");
+}
+
+const login = (req, res) => {
+    const response = req.user;
+    const opts = { maxAge : 60*60*24*7, httpOnly: true };
+    res.cookie("token", req.token, opts).json200(response, "Logged in");
+}
+
+const online = async (req, res) => {
+    if (req.user && req.user.user_id) {
+        res.json200({user: req.user});
+    } else {
+        res.json401("Invalid credentials");
+    }
+}
+
+const signout = async (req, res) => {
+    const message = "Signed out";
+    res.clearCookie("token").json200(null, message);
+}
+
+const badAuth = async (req, res) => {
+    const error = new Error("Bad auth from redirect")
+    res.json401(error);
+}
+
+const google = async (req, res) => {
+    const response = req.user;
+    res.json200(response);
+}
+
+const me = (req, res) => {
+    res.json200({
+        nickname: req.user.nickname,
+        avatar: req.user.avatar,
+        email: req.user.email
+    });
+}
+
+export { register, login, online, signout, badAuth, google, me};
