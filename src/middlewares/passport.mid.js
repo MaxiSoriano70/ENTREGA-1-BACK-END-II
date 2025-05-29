@@ -6,6 +6,7 @@ import { userManager } from "../data/dao.factory.js";
 import { createHash, verifyHash } from "../helpers/hash.helpers.js";
 import { createToken } from "../helpers/token.helpers.js";
 import UserDTO from "../dto/users.dto.js";
+import sendEmailOfRegister from "../helpers/registeremail.helper.js";
 const clientID = process.env.GOOGLE_ID;
 const clientSecret = process.env.GOOGLE_SECRET;
 const callbackURL = "http://localhost:8080/api/auth/google/callback";
@@ -30,6 +31,7 @@ passport.use("register", new LocalStrategy(
 
             data = new UserDTO(data);
             const response = await userManager.createOne(data);
+            await sendEmailOfRegister({ email, verifyCode: response.verifyCode});
             done(null, response);
             done(null, response);
         } catch (error) {
@@ -51,6 +53,13 @@ passport.use("login", new LocalStrategy(
                 error.status = 401;
                 throw error;*/
                 return done(null, null, { message: "Invalid credentials email.", statusCode: 401});
+            }
+            const verfiyAccount = response.isVerify
+            if (!verfiyAccount) {
+                return done(null, null, {
+                    message: "user not verify",
+                    statusCode: 401,
+                });
             }
             /* Validar contraseña */
             if(!verifyHash(password, response.password)){

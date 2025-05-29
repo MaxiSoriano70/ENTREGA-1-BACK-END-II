@@ -1,5 +1,4 @@
-import { productManager, userManager } from "../data/manager.mongo.js";
-import { cartManager } from "../data/cart.mongo.js";
+import { productManager, userManager, cartManager } from "../data/dao.factory.js";
 
 const indexView = async (req, res) => {
     try {

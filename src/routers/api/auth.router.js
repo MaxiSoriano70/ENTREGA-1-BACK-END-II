@@ -1,7 +1,7 @@
 import CustomRouter from "../custom.router.js";
 import passport from "../../middlewares/passport.mid.js";
 import passportCb from "../../middlewares/passportCb.mid.js";
-import { register, login, online, signout, badAuth, google, me} from "../../controllers/auth.controller.js"
+import { register, login, online, signout, badAuth, google, me, verifyAccount} from "../../controllers/auth.controller.js"
 class AuthRouter extends CustomRouter{
     constructor(){
         super()
@@ -20,6 +20,7 @@ class AuthRouter extends CustomRouter{
         this.read("/google/callback", passport.authenticate("google", { session: false, failureRedirect: "/api/auth/bad-auth",}), google);
 
         this.read("/me", ["USER", "ADMIN"], me);
+        this.read("/email/:email/code/:code", ["PUBLIC"], verifyAccount);
     }
 }
 
