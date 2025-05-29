@@ -1,13 +1,21 @@
-import { productManager } from "../data/manager.mongo.js";
+import {
+    createOneRep,
+    readAllRep,
+    readByIdRep,
+    updateByIdRep,
+    destroyByIdRep,
+} from "../repositories/products.rep.js";
 
-const createOneService = async (data) => await productManager.createOne(data);
+const createOneService = async (data) => await createOneRep(data);
+const readAllService = async (filter) => await readAllRep(filter);
+const readByIdService = async (pid) => await readByIdRep(pid);
+const updateByIdService = async (pid) => await updateByIdRep(pid, data);
+const destroyByIdService = async (pid) => await destroyByIdRep(pid);
 
-const readAllService = async (filter) => await productManager.readAll(filter);
-
-const readByIdService = async (pid) => await productManager.readById(pid);
-
-const updateByIdService = async (pid, data) => await productManager.updateById(pid, data);
-
-const destroyByIdService = async (pid) => await productManager.destroyById(pid);
-
-export { createOneService, readAllService, readByIdService, updateByIdService, destroyByIdService }
+export {
+    createOneService,
+    readAllService,
+    readByIdService,
+    updateByIdService,
+    destroyByIdService,
+};

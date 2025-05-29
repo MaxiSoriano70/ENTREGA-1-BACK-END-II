@@ -2,9 +2,10 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GoogleStrategy } from "passport-google-oauth2";
 import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
-import { userManager } from "../data/manager.mongo.js";
+import { userManager } from "../data/dao.factory.js";
 import { createHash, verifyHash } from "../helpers/hash.helpers.js";
 import { createToken } from "../helpers/token.helpers.js";
+import UserDTO from "../dto/users.dto.js";
 const clientID = process.env.GOOGLE_ID;
 const clientSecret = process.env.GOOGLE_SECRET;
 const callbackURL = "http://localhost:8080/api/auth/google/callback";
@@ -13,7 +14,7 @@ passport.use("register", new LocalStrategy(
     { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
         try {
-            const data = req.body;
+            let data = req.body;
 
             const user = await userManager.readBy({ email });
             if (user) {
@@ -27,9 +28,9 @@ passport.use("register", new LocalStrategy(
                 data.avatar = "https://cdn-icons-png.flaticon.com/512/18851/18851107.png";
             }
 
-            data.password = createHash(password);
-
+            data = new UserDTO(data);
             const response = await userManager.createOne(data);
+            done(null, response);
             done(null, response);
         } catch (error) {
             done(error);
@@ -49,14 +50,14 @@ passport.use("login", new LocalStrategy(
                 /*const error = new Error("Invalid credentials.");
                 error.status = 401;
                 throw error;*/
-                return done(null, null, { message: "Invalid credentials.", statusCode: 401});
+                return done(null, null, { message: "Invalid credentials email.", statusCode: 401});
             }
             /* Validar contraseña */
             if(!verifyHash(password, response.password)){
                 /*const error = new Error("Invalid credencials");
                 error.statusCode = 401;
                 throw error;*/
-                return done(null, null, { message: "Invalid credentials.", statusCode: 401});
+                return done(null, null, { message: "Invalid credentials pass.", statusCode: 401});
             }
             /* Lo dejamos temporalmente porqeu despues vamos a utilizar JWT */
             /*req.session.user_id = response._id;

@@ -1,0 +1,11 @@
+[
+  {
+    "_id": "10828ecfa3adadd07afedddc",
+    "email": "melisa@example.com",
+    "password": "$2b$10$bzQJFs3p6So5rWhWVNMLIOW/SjBl.Z3KfQG2qqG2Jn8agGQ4alE26",
+    "avatar": "https://cdn-icons-png.flaticon.com/512/18851/18851107.png",
+    "role": "ADMIN",
+    "createdAt": "2025-05-29T05:42:44.403Z",
+    "updatedAt": "2025-05-29T05:42:44.403Z"
+  }
+]

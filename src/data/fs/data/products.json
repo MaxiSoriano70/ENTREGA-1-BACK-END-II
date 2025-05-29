@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "2f02640375b5dec405210257",
+    "title": "Smart Tv Kodak 43",
+    "category": "Laptops",
+    "image": "https://www.shutterstock.com/image-vector/missing-picture-page-website-design-600nw-1552421075.jpg",
+    "price": 10,
+    "stock": 10,
+    "onsale": false,
+    "createdAt": "2025-05-29T05:51:28.115Z",
+    "updatedAt": "2025-05-29T05:51:28.115Z"
+  },
+  {
+    "_id": "7c2ca9fd79594e045c420d78",
+    "title": "Smart Tv Kodak 41",
+    "category": "Laptops",
+    "image": "https://www.shutterstock.com/image-vector/missing-picture-page-website-design-600nw-1552421075.jpg",
+    "price": 10,
+    "stock": 10,
+    "onsale": false,
+    "createdAt": "2025-05-29T05:58:41.775Z",
+    "updatedAt": "2025-05-29T05:58:41.775Z"
+  },
+  {
+    "_id": "977d604a1f45f459f491369e",
+    "title": "Smart Tv Kodak 21",
+    "category": "Laptops",
+    "image": "https://www.shutterstock.com/image-vector/missing-picture-page-website-design-600nw-1552421075.jpg",
+    "price": 10,
+    "stock": 10,
+    "onsale": false,
+    "createdAt": "2025-05-29T06:10:27.843Z",
+    "updatedAt": "2025-05-29T06:10:27.843Z"
+  }
+]

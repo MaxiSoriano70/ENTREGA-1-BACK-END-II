@@ -1,3 +1,4 @@
+import { userManager } from "../data/dao.factory.js";
 import { verifyToken } from "../helpers/token.helpers.js";
 
 /**
@@ -6,10 +7,9 @@ import { verifyToken } from "../helpers/token.helpers.js";
  * deja pasar sólo si el usuario es de role="admin"
  * en cualquier otra caso construye el error correspondiente
  */
-const isAdmin = (req, res, next) => {
+const isAdmin = async (req, res, next) => {
     try {
         const headers = req?.headers?.authorization;
-        //console.log(headers);
         if (!headers || !headers.startsWith("Bearer ")) {
             const error = new Error("Token is required!");
             error.statusCode = 403;
@@ -22,6 +22,8 @@ const isAdmin = (req, res, next) => {
             error.statusCode = 403;
             throw error;
         }
+        const user = await userManager.readById(data.user_id);
+        req.user = user;
         next();
     } catch (error) {
         next(error);

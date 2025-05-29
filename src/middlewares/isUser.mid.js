@@ -1,4 +1,4 @@
-import { userManager } from "../data/manager.mongo.js";
+import { userManager } from "../data/dao.factory.js";
 import { verifyToken } from "../helpers/token.helpers.js";
 
 const isUser = async (req, res, next) => {
